@@ -7,19 +7,24 @@ var ground,ball;
 var binImg,bin;
 
 function preload(){
-    binImg = loadImage("Images/dustbingreen.png");
+
+    dustbin0=loadImage("dustbin.png");
+
 }
+
+
 function setup(){
     var canvas = createCanvas(1200,600);
     engine = Engine.create();
     world = engine.world;
 
+    dustbin1=createSprite(964,505,10,10);
+    dustbin1.addImage(dustbin0);
+    dustbin1.scale=0.55;
+
     ground = new Ground();
     crumpledPaper = new Paper();
 
-    bin = createSprite(964,520,20,20);
-    bin.addImage(binImg);
-    bin.scale = 0.45;
 
     binPart1 = new Dustbin(902,505,10,120);
     binPart2 = new Dustbin(962,565,130,10);
@@ -29,7 +34,6 @@ function setup(){
 function draw(){
     background("black");
     Engine.update(engine);
-
     
     ground.display();
     crumpledPaper.display();

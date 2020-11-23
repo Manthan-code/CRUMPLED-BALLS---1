@@ -8,16 +8,19 @@ class Paper{
             
         }
         this.body = Bodies.circle(250,540,20,options);
-        this.width =33;
-        this.image = loadImage("Images/paper.png");
+        this.radius=20;
+      //  this.body=loadImage("Name.png");
         World.add(world, this.body);
     }
     display(){
+        //image(this.body,200,200);
+
         var pos = this.body.position;
         var angle = this.body.angle;
         fill("white");
         rotate(angle);
-        imageMode(CENTER);
-        image(this.image,pos.x,pos.y,33,33);
+        ellipseMode(RADIUS);
+        ellipse(pos.x,pos.y,this.radius,this.radius);
+ 
     }
 }

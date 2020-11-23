@@ -7,11 +7,11 @@ class Dustbin{
        this.width = width;
        this.height = height;
        World.add(world,this.body);
-    };
+    }
     display(){
         var pos =this.body.position;
         rectMode(CENTER);
-        fill(255, 255, 255, 0.5);
+        fill(255, 255, 255);
         rect(pos.x, pos.y, this.width, this.height);
       }
 }
